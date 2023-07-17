@@ -1,0 +1,81 @@
+WEEK-2 ASSIGNMENT
+
+1.Create Table :
+
+-->	create table stud
+	(
+	         sid int,
+	         name text,
+	         PRIMARY KEY(sid)
+	);
+
+	create table stud_details
+	(
+		id int REFERENCES stud(sid),
+		city text,
+		mobileno int
+	);
+
+2.Insert Minimum 10 Records For Each Table.
+
+-->	insert into stud values(1,'Om'),
+   	                        (2,'Sai'),
+   	                        (3,'Ram'),
+   	                        (4,'Radha'),
+   	                        (5,'Krishna'),
+  	                        (6,'Shiv'),
+	                        (7,'Shree'),
+ 	                        (8,'Akshita'),
+	                        (9,'Shivu'),
+	                        (10,'Krish');
+
+	insert into stud_details values(11,'Mumbai',9510501717),
+   	                                (1,'Surat',7908790867),
+   	                                (3,'Surat',6345789045),
+   	                                (4,'Bardoli',6346788905),
+   	                                (6,'Bharuch',9346788905),
+   	                                (10,'Bhopal',9245788905),
+   	                                (9,'Surat',9245723405),
+   	                                (7,'Surat',9510400878),
+   		                        (8,'Ladakh',9330078789),
+					(12,'Delhi',9145678792);
+
+3.Display Whose Student Come From The Surat city.
+
+-->	 	.mode table
+	 	select sid as'STUDENT ID',name as'STUDENT NAME',city as'CITY' from stud,stud_details
+   	 	where sid=id AND city='Surat';
+	
+     OUTPUT :-
+	
+		+------------+--------------+-------+
+		| STUDENT ID | STUDENT NAME | CITY  |
+		+------------+--------------+-------+
+		| 1          | Om           | Surat |
+		| 3          | Ram          | Surat |
+		| 9          | Shivu        | Surat |
+		| 7          | Shree        | Surat |
+		+------------+--------------+-------+
+
+4.Dispaly Student Details Whose City Name Start With 'B'.
+		
+-->		 .mode table
+		 select sid as'STUDENT ID',name as'STUDENT NAME',city as'CITY',mobileno as'MOBILE NUMBER' from stud,stud_details
+   		 where sid=id AND city LIKE 'B%';
+
+	OUTPUT :-
+	
+		+------------+--------------+---------+---------------+
+		| STUDENT ID | STUDENT NAME |  CITY   | MOBILE NUMBER |
+		+------------+--------------+---------+---------------+
+		| 4          | Radha        | Bardoli | 6346788905    |
+		| 6          | Shiv         | Bharuch | 9346788905    |
+		| 10         | Krish        | Bhopal  | 9245788905    |
+		+------------+--------------+---------+---------------+	
+
+5.Update Mobileno Who Are Coming From 'Surat'.
+
+-->		update stud_details
+   		set mobileno=9510500989
+   	 	where city='Surat';
+
