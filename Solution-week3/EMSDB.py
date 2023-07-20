@@ -71,7 +71,7 @@ seq="select * from employee"
 cur.execute(seq)
 print("\n\n\n OUTPUT OF QUERY NO:-4 : PRINT ALL RECORDS \n")
 re1=cur.fetchall()
-df1=pd.DataFrame(re1,columns=['ID','NAME','DEPARTMENT','BASIC','BRANCH'],index=None)
+df1=pd.DataFrame(re1,columns=['ID','NAME','DEPARTMENT','BASIC','BRANCH'])
 print(df1.to_string(index=False))
 con.commit()
 
@@ -83,7 +83,7 @@ sehi="select * from employee\
 cur.execute(sehi)
 print("\n\n\n OUTPUT OF QUERY NO:-5 : PRINT RECORDS WHERE DEPT IS \"HR\" AND \"IT\" \n")
 re2=cur.fetchall()
-df2=pd.DataFrame(re2,columns=['ID','NAME','DEPARTMENT','BASIC','BRANCH'],index=None)
+df2=pd.DataFrame(re2,columns=['ID','NAME','DEPARTMENT','BASIC','BRANCH'])
 print(df2.to_string(index=False))
 con.commit()
 
@@ -95,7 +95,7 @@ sortasc="select * from employee\
 cur.execute(sortasc)
 print("\n\n\n OUTPUT OF QUERY NO:-6 : PRINT RECORDS IN SORTING ORDER OF DEPARTMENT \n ")
 re3=cur.fetchall()
-df3=pd.DataFrame(re3,columns=['ID','NAME','DEPARTMENT','BASIC','BRANCH'],index=None)
+df3=pd.DataFrame(re3,columns=['ID','NAME','DEPARTMENT','BASIC','BRANCH'])
 print(df3.to_string(index=False))
 con.commit()
 
